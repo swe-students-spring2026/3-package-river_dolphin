@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pydog"
+description = "A dog-themed Python package"
+version = "0.1.0"
+authors = [
+  { name="Team River dolphin" },
+]
+license = { file = "LICENSE" }
+readme = "README.md"
+keywords = ["python", "package", "dog"]
+requires-python = ">=3.7"
+
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Intended Audience :: Education",
+    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+    "Operating System :: OS Independent",
+]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[project.urls]
+"Homepage" = "https://github.com/swe-students-spring2026/3-package-river_dolphin/tree/main"
+"Repository" = "https://github.com/swe-students-spring2026/3-package-river_dolphin/tree/main.git"
+"Bug Tracker" = "https://github.com/swe-students-spring2026/3-package-river_dolphin/tree/main/issues"
+
+[project.scripts]
+pydog = "pydog.__main__:main"
+
+#telling that package code is in src/
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
