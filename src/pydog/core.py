@@ -57,3 +57,25 @@ WOOF!  \_/\__/| |
 """
 
     return speech + dog
+
+DOGS = {
+    "dog1": r"""
+        / \__
+       (    @\___
+       /         O
+      /   (_____/
+     /_____/   U
+"""}
+
+def bark(message: str) -> str:
+    """Repeat 'bark' for each word in the message"""
+    if not isinstance(message, str):
+        raise TypeError(f"message must be a string, got {type(message).__name__}")
+    if not message.strip():
+        raise ValueError("message cannot be empty or whitespace")
+    
+    word_count = len(message.split())
+    barks = " ".join(["bark"] * word_count)
+    border = "-" * (len(barks) + 2)
+    bubble = f" {border}\n< {barks} >\n {border}\n   \\\n    \\"
+    return f"{bubble}\n{DOGS['dog1']}"
