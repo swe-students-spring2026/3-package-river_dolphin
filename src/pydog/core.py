@@ -12,12 +12,10 @@ def speak(message: str, mood: str) -> str:
     if mood not in VALID_MOODS:
         raise ValueError(f"Invalid mood: {mood}")
 
-    # speech 
     speech = f"""  ___________
 < {message.strip()} >
   -----------"""
 
-    # dog styles
     if mood == "happy":
         dog = r"""
   ___    ___
@@ -28,7 +26,6 @@ def speak(message: str, mood: str) -> str:
 / . .(__) . .\
 \ .  \__/  . /
  \__/\__/\__/
-
 """
     elif mood == "sleepy":
         dog = r"""
@@ -41,7 +38,7 @@ def speak(message: str, mood: str) -> str:
 \ . ----- . /
  \__/\__/\__/
 """
-    else:  # angry
+    else:
         dog = r"""
            __      _
         \.'---.//|
@@ -53,10 +50,10 @@ WOOF!  \_/\__/| |
         V  /V / |
           /__/ /
           \___/\
-
 """
 
     return speech + dog
+
 
 DOGS = {
     "dog1": r"""
@@ -65,17 +62,37 @@ DOGS = {
        /         O
       /   (_____/
      /_____/   U
-"""}
+"""
+}
+
 
 def bark(message: str) -> str:
-    """Repeat 'bark' for each word in the message"""
     if not isinstance(message, str):
         raise TypeError(f"message must be a string, got {type(message).__name__}")
     if not message.strip():
         raise ValueError("message cannot be empty or whitespace")
-    
+
     word_count = len(message.split())
     barks = " ".join(["bark"] * word_count)
-    border = "-" * (len(barks) + 2)
-    bubble = f" {border}\n< {barks} >\n {border}\n   \\\n    \\"
-    return f"{bubble}\n{DOGS['dog1']}"
+    return barks
+
+
+def wag(message: str) -> str:
+    if not isinstance(message, str):
+        raise TypeError(f"message must be a string, got {type(message).__name__}")
+    if not message.strip():
+        raise ValueError("message cannot be empty or whitespace")
+
+    dog = r"""
+      / \__
+     (    @\___
+     /         O
+    /   (_____/
+   /_____/   U   ~wag~
+    """
+
+    speech = f"""  ___________
+< {message.strip()} >
+  -----------"""
+
+    return speech + dog
