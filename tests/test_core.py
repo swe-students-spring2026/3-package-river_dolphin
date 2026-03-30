@@ -1,5 +1,5 @@
 import pytest
-from pydog.core import speak, bark, wag
+from pydog.core import speak, bark, wag, pose
 
 
 # ---- SPEAK TESTS ----
