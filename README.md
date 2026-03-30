@@ -29,7 +29,9 @@ pipenv install
 
 pipenv shell
 
-# Start the application:
+# run the package
 
-python app.py
+python -m pydog
+
+
 ```
