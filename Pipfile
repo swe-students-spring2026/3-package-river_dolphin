@@ -12,6 +12,7 @@ pydog = {path = ".", editable = true}
 
 [dev-packages]
 pytest = "*"
+pytest-cov = "*"
 build = "*"
 twine = "*"
 exceptiongroup = {version = "*", markers = "python_version < '3.11'"}
