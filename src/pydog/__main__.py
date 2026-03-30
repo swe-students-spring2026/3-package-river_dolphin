@@ -1,6 +1,6 @@
 from .core import wag, bark
 import argparse
-# use arg parse to create a command line interface for the pydog package
+# use arg parse to create a command line interface for the pydog package.
 def main():
     parser = argparse.ArgumentParser(description="pydog - a dog in your terminal")
     parser.add_argument("--bark", type=int, help="enter a number to specify the number of barks")
