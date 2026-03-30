@@ -97,3 +97,53 @@ def wag(message: str) -> str:
   -----------"""
 
     return speech + dog
+
+def pose(trick: str, mood: str = "happy") -> str:
+    if not isinstance(trick, str) or not trick.strip():
+        raise ValueError("trick must be a non-empty string")
+
+    if not isinstance(mood, str):
+        raise ValueError("mood must be a string")
+
+    trick = trick.strip().lower()
+    mood = mood.strip().lower()
+
+    if trick not in valid_tricks:
+        raise ValueError(f"Invalid trick: {trick}")
+
+    if mood not in valid_moods:
+        raise ValueError(f"Invalid mood: {mood}")
+
+    # might remove roll...cuz it's hard to find roll ASCII art of a dog
+    valid_tricks = {"sit", "roll", "beg"}
+    valid_moods = {"happy", "sleepy", "angry"}
+
+    title = f" Dog does {trick}! "
+
+#currently is test, I will replace it with ASCII art of dog doing it
+    if trick == "sit":
+        if mood == "happy":
+            dog = "dog sits happily"
+        elif mood == "sleepy":
+            dog = "dog sits sleepily 💤"
+        else:
+            dog = "dog sits angrily"
+
+    elif trick == "roll":
+        if mood == "happy":
+            dog = "dog rolls over happily"
+        elif mood == "sleepy":
+            dog = "dog rolls slowly"
+        else:
+            dog = "dog rolls with attitude"
+
+    else:  # beg
+        if mood == "happy":
+            dog = "dog begs happily"
+        elif mood == "sleepy":
+            dog = "dog begs while sleepy"
+        else:
+            dog = "dog begs angrily"
+
+    border = "-" * len(title)
+    return f"{border}\n{title}\n{border}\n{dog}"
