@@ -65,16 +65,17 @@ DOGS = {
 """
 }
 
+# This function generates a string representation of a dog barking a specified number of times.
+def bark(num_barks: int) -> str:
+    if not isinstance(num_barks, int) or isinstance(num_barks, bool):
+        raise TypeError(f"num_barks must be an int, got {type(num_barks).__name__}")
+    if num_barks <= 0:
+        raise ValueError("num_barks must be a positive number")
 
-def bark(message: str) -> str:
-    if not isinstance(message, str):
-        raise TypeError(f"message must be a string, got {type(message).__name__}")
-    if not message.strip():
-        raise ValueError("message cannot be empty or whitespace")
-
-    word_count = len(message.split())
-    barks = " ".join(["bark"] * word_count)
-    return barks
+    barks = " ".join(["bark"] * num_barks)
+    border = "-" * (len(barks) + 2)
+    bubble = f" {border}\n< {barks} >\n {border}\n   \\\n    \\"
+    return f"{bubble}\n{DOGS['dog1']}"
 
 
 def wag(message: str) -> str:

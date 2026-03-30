@@ -40,40 +40,43 @@ def test_speak_empty_message():
 
 
 # ---- BARK TESTS ----
-def test_bark_one_word():
-    assert bark("hello") == "bark"
+def test_bark_one():
+    assert "bark" in bark(1)
 
-
-def test_bark_two_words():
-    assert bark("hello world") == "bark bark"
-
-
-def test_bark_four_words():
-    assert bark("I love my dog") == "bark bark bark bark"
-
+def test_bark_three():
+    result = bark(3)
+    assert result.count("bark") == 3
 
 def test_bark_returns_string():
-    assert isinstance(bark("hello"), str)
+    assert isinstance(bark(1), str)
 
+def test_bark_has_bubble():
+    result = bark(2)
+    assert "<" in result and ">" in result
 
-def test_bark_empty_string():
+def test_bark_has_dog():
+    result = bark(1)
+    assert "___" in result  # part of the dog art
+
+def test_bark_zero():
     with pytest.raises(ValueError):
-        bark("")
+        bark(0)
 
-
-def test_bark_whitespace_only():
+def test_bark_negative():
     with pytest.raises(ValueError):
-        bark("   ")
+        bark(-1)
 
-
-def test_bark_not_a_string():
+def test_bark_not_an_int():
     with pytest.raises(TypeError):
-        bark(123)
-
+        bark("hello")
 
 def test_bark_none():
     with pytest.raises(TypeError):
         bark(None)
+
+def test_bark_bool():
+    with pytest.raises(TypeError):
+        bark(True)
 
 
 # ---- WAG TESTS (YOUR PART) ----
