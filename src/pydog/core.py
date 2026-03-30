@@ -98,14 +98,20 @@ def wag(message: str) -> str:
     return speech + dog
 
 def pose(trick: str, mood: str = "happy") -> str:
-    # if not isinstance(trick, str) or not trick.strip():
-    #     raise ValueError("trick must be a non-empty string")
+    if not isinstance(trick, str) or not trick.strip():
+        raise ValueError("trick must be a non-empty string")
 
-    # if not isinstance(mood, str):
-        # raise ValueError("mood must be a string")
+    if not isinstance(mood, str):
+        raise ValueError("mood must be a string")
 
     trick = trick.strip().lower()
     mood = mood.strip().lower()
+
+    if trick not in valid_tricks:
+        raise ValueError(f"Invalid trick: {trick}")
+
+    if mood not in valid_moods:
+        raise ValueError(f"Invalid mood: {mood}")
 
     # might remove roll...cuz it's hard to find roll ASCII art of a dog
     valid_tricks = {"sit", "roll", "beg"}
