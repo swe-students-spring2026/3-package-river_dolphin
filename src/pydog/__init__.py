@@ -1,2 +1,2 @@
 from .core import speak, bark, wag
-from pydog import speak
+from pydog import speak, bark, wag
