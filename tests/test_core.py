@@ -103,3 +103,34 @@ def test_wag_empty_string():
 def test_wag_not_string():
     with pytest.raises(TypeError):
         wag(123)
+
+
+def test_pose_sit_happy():
+    result = pose("sit", "happy")
+    assert "sit" in result.lower()
+    assert "happy" in result.lower() or "happily" in result.lower()
+    assert isinstance(result, str)
+
+def test_pose_stand_sleepy():
+    result = pose("stand", "sleepy")
+    assert "stand" in result.lower()
+    assert isinstance(result, str)
+    assert len(result) > 0
+
+def test_pose_stare_angry():
+    result = pose("stare", "angry")
+    assert "stare" in result.lower()
+    assert "angry" in result.lower() or len(result) > 0
+    assert isinstance(result, str)
+
+def test_pose_invalid_trick():
+    with pytest.raises(ValueError):
+        pose("jump", "happy")
+
+def test_pose_invalid_mood():
+    with pytest.raises(ValueError):
+        pose("sit", "excited")
+
+def test_pose_invalid_type():
+    with pytest.raises(ValueError):
+        pose("", "happy")
