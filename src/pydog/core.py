@@ -77,7 +77,6 @@ def bark(num_barks: int) -> str:
     bubble = f" {border}\n< {barks} >\n {border}\n   \\\n    \\"
     return f"{bubble}\n{DOGS['dog1']}"
 
-
 def wag(message: str) -> str:
     if not isinstance(message, str):
         raise TypeError(f"message must be a string, got {type(message).__name__}")
