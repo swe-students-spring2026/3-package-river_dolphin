@@ -75,7 +75,7 @@ print(pose("stare", "angry"))
 
 ## install from PyPI:
 
-https://pypi.org/project/pyfundog/
+https://pypi.org/project/pyfundog/0.1.0/
 
 ```
 pip install pyfundog
