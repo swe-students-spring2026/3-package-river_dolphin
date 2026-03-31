@@ -1,4 +1,16 @@
 def speak(message: str, mood: str) -> str:
+    """Return ASCII dog art with a speech bubble.
+
+    Args:
+        message (str): The message to display in the speech bubble. Must be non-empty.
+        mood (str): The dog's mood. One of 'happy', 'sleepy', or 'angry' (case-insensitive).
+
+    Returns:
+        str: ASCII art of a dog with the message in a speech bubble.
+
+    Raises:
+        ValueError: If message is empty/whitespace, or mood is not a valid option.
+    """
     if not isinstance(message, str) or not message.strip():
         raise ValueError("message must be a non-empty string")
 
@@ -65,8 +77,19 @@ DOGS = {
 """
 }
 
-# This function generates a string representation of a dog barking a specified number of times.
 def bark(num_barks: int) -> str:
+    """Return ASCII dog art barking a specified number of times.
+
+    Args:
+        num_barks (int): Number of times the dog barks. Must be a positive integer.
+
+    Returns:
+        str: ASCII art of a dog with 'bark' repeated num_barks times in a speech bubble.
+
+    Raises:
+        TypeError: If num_barks is not an int (booleans are rejected).
+        ValueError: If num_barks is not positive.
+    """
     if not isinstance(num_barks, int) or isinstance(num_barks, bool):
         raise TypeError(f"num_barks must be an int, got {type(num_barks).__name__}")
     if num_barks <= 0:
@@ -79,6 +102,18 @@ def bark(num_barks: int) -> str:
 
 
 def wag(message: str) -> str:
+    """Return ASCII dog art wagging its tail with a message.
+
+    Args:
+        message (str): The message to display in the speech bubble. Must be non-empty.
+
+    Returns:
+        str: ASCII art of a wagging dog with the message in a speech bubble.
+
+    Raises:
+        TypeError: If message is not a string.
+        ValueError: If message is empty or whitespace.
+    """
     if not isinstance(message, str):
         raise TypeError(f"message must be a string, got {type(message).__name__}")
     if not message.strip():
@@ -99,6 +134,19 @@ def wag(message: str) -> str:
     return speech + dog
 
 def pose(trick: str, mood: str = "happy") -> str:
+    """Return ASCII dog art performing a trick with a given mood.
+
+    Args:
+        trick (str): The trick to perform. One of 'sit', 'stand', or 'stare' (case-insensitive).
+        mood (str): The dog's mood. One of 'happy', 'sleepy', or 'angry' (case-insensitive).
+            Defaults to 'happy'.
+
+    Returns:
+        str: ASCII art of a dog performing the specified trick with the given mood.
+
+    Raises:
+        ValueError: If trick or mood is empty, not a string, or not a valid option.
+    """
     if not isinstance(trick, str) or not trick.strip():
         raise ValueError("trick must be a non-empty string")
 
