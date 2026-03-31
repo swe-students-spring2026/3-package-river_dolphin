@@ -18,10 +18,18 @@ def main():
         print(wag(args.wag))
     elif args.speak_message is not None and args.speak_mood is not None:
         print(speak(args.speak_message, args.speak_mood))
+    elif args.pose is not None:
+        trick, mood = args.pose
+        print(pose(trick, mood))
     else:
+        print(speak("hello!", "happy"))
+        print()
         print(bark(2))
+        print()
         print(wag("good dog"))
+        print()
         print(pose("sit", "happy"))
+        print()
         # parser.print_help()
         # I think it will be cuter to show the demos for default
 
