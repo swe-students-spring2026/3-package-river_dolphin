@@ -51,6 +51,23 @@ print(wag("Good dog!"))
 
 ```
 
+### fetch(item)
+
+Returns a dog ASCII carrying the specified item.
+
+Raises:
+
+- ValueError if item is empty or whitespace
+- TypeError if item is not a string
+
+Example:
+```
+from pydog import fetch
+
+print(fetch("ball"))
+
+```
+
 ### pose(trick, mood)
 
 Returns a dog ASCII performing a specific trick with a given mood.

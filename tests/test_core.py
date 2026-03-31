@@ -1,5 +1,5 @@
 import pytest
-from pydog.core import speak, bark, wag, pose
+from pydog.core import speak, bark, wag, fetch, pose
 
 
 # ---- SPEAK TESTS ----
@@ -134,3 +134,38 @@ def test_pose_invalid_mood():
 def test_pose_invalid_type():
     with pytest.raises(ValueError):
         pose("", "happy")
+
+
+# ---- FETCH TESTS ----
+def test_fetch_returns_string():
+    assert isinstance(fetch("ball"), str)
+
+
+def test_fetch_contains_item():
+    result = fetch("stick")
+    assert "stick" in result
+
+
+def test_fetch_different_items():
+    result1 = fetch("ball")
+    result2 = fetch("frisbee")
+    assert result1 != result2
+
+
+def test_fetch_strips_whitespace():
+    result = fetch("  bone  ")
+    assert "bone" in result
+
+
+def test_fetch_has_dog():
+    assert "___" in fetch("ball")
+
+
+def test_fetch_empty_string():
+    with pytest.raises(ValueError):
+        fetch("")
+
+
+def test_fetch_not_string():
+    with pytest.raises(TypeError):
+        fetch(42)

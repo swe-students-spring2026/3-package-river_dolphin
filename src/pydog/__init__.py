@@ -1,3 +1,3 @@
-from .core import speak, bark, wag, pose
+from .core import speak, bark, wag, fetch, pose
 
-__all__ = ["speak", "bark", "wag", "pose"]
+__all__ = ["speak", "bark", "wag", "fetch", "pose"]
