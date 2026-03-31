@@ -1,4 +1,4 @@
-from pydog import speak, bark, wag, pose
+from pydog import speak, bark, wag, fetch, pose
 
 if __name__ == "__main__":
     print("=== SPEAK ===")
@@ -16,6 +16,12 @@ if __name__ == "__main__":
     print()
     print(wag("fetch!"))
 
+    print("\n=== FETCH ===")
+    print(fetch("ball"))
+    print()
+    print(fetch("stick"))
+
+    print("\n=== POSE ===")
     print(pose("sit", "sleepy"))
     print()
     print(pose("stand", "happy"))

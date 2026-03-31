@@ -132,6 +132,34 @@ def wag(message: str) -> str:
 
     return speech + dog
 
+def fetch(item: str) -> str:
+    """Return ASCII dog art fetching a specified item.
+
+    Args:
+        item (str): The item the dog fetches. Must be a non-empty string.
+
+    Returns:
+        str: ASCII art of a dog carrying the item.
+
+    Raises:
+        TypeError: If item is not a string.
+        ValueError: If item is empty or whitespace.
+    """
+    if not isinstance(item, str):
+        raise TypeError(f"item must be a string, got {type(item).__name__}")
+    if not item.strip():
+        raise ValueError("item cannot be empty or whitespace")
+
+    dog = r"""
+      / \__
+     (    @\___
+     /         O
+    /   (_____/
+   /_____/   U
+    """
+    return f"  *fetches {item.strip()}*\n{dog}"
+
+
 def pose(trick: str, mood: str = "happy") -> str:
     """Return ASCII dog art performing a trick with a given mood.
 
