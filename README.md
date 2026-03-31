@@ -8,10 +8,10 @@ See [instructions](./instructions.md) for details.
 ---
 
 ## Team members:
-[Tsengelmurun Enkh-Onon](https://github.com/murnbn)
-[Milan Engineer](https://github.com/MilanEngineer)
-[Sara Dou](https://github.com/SaraD-666)
-[Jack Escowitz](https://github.com/JackREscowitz)
+-  [Tsengelmurun Enkh-Onon](https://github.com/murnbn)
+- [Milan Engineer](https://github.com/MilanEngineer)
+- [Sara Dou](https://github.com/SaraD-666)
+- [Jack Escowitz](https://github.com/JackREscowitz)
 
 
 ## Features
@@ -21,7 +21,7 @@ Returns a dog ASCII with a message and mood (happy, sleepy, angry)
 
 Example:
 ```
-from pyfundog import speak
+from pydog import speak
 
 print(speak("hello!", "happy"))
 
@@ -33,7 +33,7 @@ Returns a dog ASCII with a speech bubble containing "bark" repeated `num_barks` 
 
 Example:
 ```
-from pyfundog import bark
+from pydog import bark
 
 print(bark(3))
 
@@ -45,7 +45,7 @@ Returns a wagging dog ASCII that echoes the message
 
 Example:
 ```
-from pyfundog import wag
+from pydog import wag
 
 print(wag("Good dog!"))
 
@@ -65,7 +65,7 @@ Raises:
 
 Example:
 ```
-from pyfundog import pose
+from pydog import pose
 
 print(pose("sit", "happy"))
 print(pose("stand", "sleepy"))
@@ -84,9 +84,9 @@ pip install pyfundog
 
 ## Usage (CLI)
 ```
-python -m pyfundog --bark 3
-python -m pyfundog --wag "hello"
-python -m pyfundog --speak-message "hi" --speak-mood happy
+python -m pydog --bark 3
+python -m pydog --wag "hello"
+python -m pydog --speak-message "hi" --speak-mood happy
 
 ```
 
