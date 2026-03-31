@@ -7,7 +7,7 @@ See [instructions](./instructions.md) for details.
 
 ---
 
-##Team members:
+## Team members:
 [Tsengelmurun Enkh-Onon](https://github.com/murnbn)
 [Milan Engineer](https://github.com/MilanEngineer)
 [Sara Dou](https://github.com/SaraD-666)
@@ -17,7 +17,7 @@ See [instructions](./instructions.md) for details.
 ## Features
 ### speak(message, mood)
 
-Returns a dog ASCII with a message and mood (happy, sleepy, angry
+Returns a dog ASCII with a message and mood (happy, sleepy, angry)
 
 Example:
 ```
@@ -29,7 +29,7 @@ print(speak("hello!", "happy"))
 
 ### bark(num_barks)
 
-Returns "bark" repeated for each word in the input
+Returns a dog ASCII with a speech bubble containing "bark" repeated `num_barks` times
 
 Example:
 ```
