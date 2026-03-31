@@ -9,6 +9,13 @@ def main():
     parser.add_argument("--speak-message", type=str, help="message for speak")
     parser.add_argument("--speak-mood", type=str, help="mood for speak (happy, sleepy, angry)")
 
+    parser.add_argument(
+        "--pose",
+        nargs=2,
+        metavar=("TRICK", "MOOD"),
+        help="dog performs a trick with a mood, e.g. --pose sit happy",
+    )
+
     
     args = parser.parse_args()
     
