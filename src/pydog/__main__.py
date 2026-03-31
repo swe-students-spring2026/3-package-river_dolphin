@@ -1,4 +1,4 @@
-from .core import speak, bark, wag
+from .core import speak, bark, wag, pose
 import argparse
 # use arg parse to create a command line interface for the pydog package.
 def main():
@@ -19,7 +19,11 @@ def main():
     elif args.speak_message is not None and args.speak_mood is not None:
         print(speak(args.speak_message, args.speak_mood))
     else:
-        parser.print_help()
+        print(bark(2))
+        print(wag("good dog"))
+        print(pose("sit", "happy"))
+        # parser.print_help()
+        # I think it will be cuter to show the demos for default
 
 if __name__ == "__main__":
     main()
