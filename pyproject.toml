@@ -3,7 +3,7 @@ requires = ["setuptools>=61.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "pydog"
+name = "pyfundog"
 description = "A dog-themed Python package"
 version = "0.1.0"
 authors = [
@@ -30,7 +30,7 @@ dev = ["pytest"]
 "Bug Tracker" = "https://github.com/swe-students-spring2026/3-package-river_dolphin/tree/main/issues"
 
 [project.scripts]
-pydog = "pydog.__main__:main"
+pyfundog = "pydog.__main__:main"
 
 #telling that package code is in src/
 [tool.setuptools]
