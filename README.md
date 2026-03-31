@@ -92,7 +92,7 @@ print(pose("stare", "angry"))
 
 ## install from PyPI:
 
-https://pypi.org/project/pyfundog/0.1.0/
+https://pypi.org/project/pyfundog/
 
 ```
 pip install pyfundog
@@ -104,6 +104,7 @@ pip install pyfundog
 python -m pydog --bark 3
 python -m pydog --wag "hello"
 python -m pydog --speak-message "hi" --speak-mood happy
+python -m pydog --pose sit happy
 
 ```
 
