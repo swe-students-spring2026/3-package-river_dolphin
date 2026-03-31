@@ -1,7 +1,7 @@
 # Python Package Exercise
 ![CI](https://github.com/swe-students-spring2026/3-package-river_dolphin/actions/workflows/build.yaml/badge.svg)
 
-A Python package exercise `pydog` lets you generate ASCII dogs that can **speak, bark, wag, and pose**.
+A Python package exercise `pyfundog` lets you generate ASCII dogs that can **speak, bark, wag, and pose**.
 
 See [instructions](./instructions.md) for details.
 
@@ -21,7 +21,7 @@ Returns a dog ASCII with a message and mood (happy, sleepy, angry)
 
 Example:
 ```
-from pydog import speak
+from pyfundog import speak
 
 print(speak("hello!", "happy"))
 
@@ -33,7 +33,7 @@ Returns a dog ASCII with a speech bubble containing "bark" repeated `num_barks` 
 
 Example:
 ```
-from pydog import bark
+from pyfundog import bark
 
 print(bark(3))
 
@@ -45,7 +45,7 @@ Returns a wagging dog ASCII that echoes the message
 
 Example:
 ```
-from pydog import wag
+from pyfundog import wag
 
 print(wag("Good dog!"))
 
@@ -65,7 +65,7 @@ Raises:
 
 Example:
 ```
-from pydog import pose
+from pyfundog import pose
 
 print(pose("sit", "happy"))
 print(pose("stand", "sleepy"))
@@ -75,18 +75,18 @@ print(pose("stare", "angry"))
 
 ## install from PyPI:
 
-https://pypi.org/project/pydog/
+https://pypi.org/project/pyfundog/
 
 ```
-pip install pydog
+pip install pyfundog
 
 ```
 
 ## Usage (CLI)
 ```
-python -m pydog --bark 3
-python -m pydog --wag "hello"
-python -m pydog --speak-message "hi" --speak-mood happy
+python -m pyfundog --bark 3
+python -m pyfundog --wag "hello"
+python -m pyfundog --speak-message "hi" --speak-mood happy
 
 ```
 
